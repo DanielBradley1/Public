@@ -1,7 +1,7 @@
 ####
 #Name: Daniel Bradley
 #LinkedIn: https://www.linkedin.com/in/danielbradley2/
-#Description: This script will automatically check if your MDM user scope is configured. If it is set to none, it will assign all users to the scope.
+#Description: https://ourcloudnetwork.com/how-to-create-custom-intune-roles-with-powershell/
 ####
 
 ###
