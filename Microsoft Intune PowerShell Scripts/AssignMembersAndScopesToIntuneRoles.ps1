@@ -1,13 +1,14 @@
+####
+#Name: Daniel Bradley
+#LinkedIn: https://www.linkedin.com/in/danielbradley2/
+#Description: https://ourcloudnetwork.com/how-to-create-custom-intune-roles-with-powershell/
+####
+
 ###
 $DisplayName = "My Display Name" #Define a name for your role assignment
 $AdminGroupName = "Approval Admins" #Define the group that contains the user you wish you assign this role to
 $RoleName = "Read-Only Device Role" #Define the name of the active role
 ###
-####
-#Name: Daniel Bradley
-#LinkedIn: https://www.linkedin.com/in/danielbradley2/
-#Description: This script will automatically check if your MDM user scope is configured. If it is set to none, it will assign all users to the scope.
-####
 
 #Import Module
 Import-Module Microsoft.Graph.DeviceManagement.Administration
