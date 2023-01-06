@@ -1,0 +1,24 @@
+Import-module Microsoft.Graph.DeviceManagement.Enrolment
+
+Install-module Microsoft.graph -scope CurrentUser
+
+Connect-MgGraph -scope DeviceManagementConfiguration.ReadWrite.All, DeviceManagementServiceConfig.ReadWrite.All
+
+
+
+$uri = https://graph.microsoft.com/beta/deviceManagement/deviceEnrollmentConfigurations/c755159d-4ddc-4146-be8b-9b3c8c54d5be_SinglePlatformRestriction/assign
+
+$body = @{
+
+
+{"enrollmentConfigurationAssignments":
+    [
+        {"id":"c755159d-4ddc-4146-be8b-9b3c8c54d5be_acacacac-9df4-4c7d-9d50-4ef0226f57a9_c755159d-4ddc-4146-be8b-9b3c8c54d5be",
+        "target":
+            {"@odata.type":"#microsoft.graph.allLicensedUsersAssignmentTarget",
+            "deviceAndAppManagementAssignmentFilterId":"8967bc53-e05c-4499-b5e4-eeb011c594df",
+            "deviceAndAppManagementAssignmentFilterType":"Exclude"
+            }
+            }
+            ]
+            }
