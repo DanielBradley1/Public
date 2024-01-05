@@ -1,0 +1,19 @@
+function Remove-Null {
+  param(
+    [parameter(Mandatory,ValueFromPipeline)]
+    [psobject] $InputObject
+  )
+  process {
+    $obj = [pscustomobject]::new()
+    foreach($prop in $InputObject.psobject.properties) {
+      if ($null -ne $InputObject.$($prop.Name)) {
+        Add-Member -InputObject $obj -NotePropertyName $prop.Name -NotePropertyValue $prop.Value
+      }
+    }
+    $obj.pstypenames.Insert(0, 'NonNull.' + $InputObject.GetType().FullName)
+    $obj
+  }
+}
+
+#Example
+Get-MgUser -userid $username | Remove-Null
