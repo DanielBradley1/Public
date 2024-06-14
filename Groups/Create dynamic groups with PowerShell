@@ -1,0 +1,17 @@
+Connect-MgGraph -scopes group.readwrite.all
+
+$body = @'
+{
+  "displayName": "group name here",
+  "mailEnabled": false,
+  "mailNickname": "8a55d6ad-a",
+  "securityEnabled": true,
+  "groupTypes": [
+    "DynamicMembership"
+  ],
+  "membershipRule": "(user.extensionAttribute10 -eq \"value\")", #membership rule here
+  "membershipRuleProcessingState": "On"
+}
+'@
+
+Invoke-MgGraphRequest -Method POST -Body $body -Uri "/beta/groups"
